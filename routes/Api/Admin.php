@@ -20,12 +20,12 @@ use App\Http\Controllers\Api\Admin\General\SocialMediaPlatformController;
 
 Route::middleware(['auth:sanctum'])->group(function () {
 
-
+//test
 
 
         Route::middleware(['role:admin'])->group(function () {
 
-      
+
 
         Route::controller(CountryController::class)->prefix('countries')->group(function () {
             Route::post('/', 'store');
@@ -51,14 +51,14 @@ Route::middleware(['auth:sanctum'])->group(function () {
             Route::delete('/{id}', 'delete');
             Route::put('/update-approval/{id}', 'updateApproval');
 
-            
+
 
 
 
         });
 
 
-        
+
         Route::controller(CategoryController::class)->prefix('categories')->group(function () {
             Route::post('/', 'store');
             Route::delete('/{id}', 'delete');
@@ -90,8 +90,8 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
 
       Route::controller(DiscountCodeController::class)->prefix('discount-code')->group(function () {
-        
-        
+
+
             Route::get('/export-template', 'exportDiscountCodesTemplate');
             Route::post('/import-data', 'importDiscountCodes');
 
@@ -108,7 +108,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
         });
 
 Route::controller(SocialMediaPlatformController::class)->prefix('social-media-platforms')->group(function () {
-        
+
             Route::post('/', 'store');
             Route::delete('/{id}', 'delete');
             Route::get('/', 'index');
@@ -122,16 +122,16 @@ Route::controller(SocialMediaPlatformController::class)->prefix('social-media-pl
         });
 
 
-        
-        
 
-   
+
+
+
 
     });
 
 
 
-        
+
 });
 
 
